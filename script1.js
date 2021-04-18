@@ -12,3 +12,11 @@ let personalMovieDB = {
 
 };
 
+let cat = prompt('Один из последних просмотренных фильмов?');
+
+let dog = +prompt('На сколько оцените его?');
+
+let movies = {
+    'login': cat,
+    'book': dog,
+};
