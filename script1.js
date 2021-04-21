@@ -20,6 +20,6 @@ let cat = prompt('Один из последних просмотренных ф
 personalMovieDB.movies[cat] = dog;
 personalMovieDB.movies[a] = b;
 
-console.log(personalMovieDB);
 
+console.log(personalMovieDB);
 
