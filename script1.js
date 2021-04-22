@@ -1,56 +1,89 @@
 'use sctrict';
 
-// let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');
-
-
-// let personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
-
-// let cat = prompt('Один из последних просмотренных фильмов?');
-//     dog = +prompt('На сколько оцените его?');
-//     a = prompt('Один из последних просмотренных фильмов?');
-//     b = +prompt('На сколько оцените его?');
-
-// personalMovieDB.movies[cat] = dog;
-// personalMovieDB.movies[a] = b;
-
-
-// console.log(personalMovieDB);
-
 let numberOfFilms;
 
-    do {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    } while (numberOfFilms == '' || numberOfFilms == null);
+do {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+} while (numberOfFilms == '' || numberOfFilms == null);
 
-    // let = personalMovieDB.count;
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-if (numberOfFilms < 10) {
+
+if (personalMovieDB.count < 10) {
     alert("Просмотрено довольно мало фильмов");
-} else if (numberOfFilms > 10 || numberOfFilms < 30) {
+} else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
     alert("Вы классический зритель");
-} else if (numberOfFilms > 30) {
+} else if (personalMovieDB.count > 30) {
     alert('Вы киноман!');
 } else {
     alert("Произошла ошибка");
 }
 
-let cat;
+
+
+for (i=0; i < 2; i++) {
+    let cat;
 
     do {
         cat = prompt('Один из последних просмотренных фильмов?');
-    } while (cat == '' || cat == null);
+    } while (cat == '' || cat == null || cat.length > 50);
 
-let dog;
+    let dog;
 
     do {
         dog = +prompt('На сколько оцените его?');
     } while (dog == '' || dog == null);
+    personalMovieDB.movies[cat] = dog;
+}
+// let cat;
+
+//     do {
+//         cat = prompt('Один из последних просмотренных фильмов?');
+//     } while (cat == '' || cat == null || cat.length < 50);
+
+// let dog;
+
+//     do {
+//         dog = +prompt('На сколько оцените его?');
+//     } while (dog == '' || dog == null);
+
+console.log(personalMovieDB);
+
+// let numberOfFilms;
+
+//     do {
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//     } while (numberOfFilms == '' || numberOfFilms == null);
+
+//     // let = personalMovieDB.count;
+
+// if (numberOfFilms < 10) {
+//     alert("Просмотрено довольно мало фильмов");
+// } else if (numberOfFilms > 10 || numberOfFilms < 30) {
+//     alert("Вы классический зритель");
+// } else if (numberOfFilms > 30) {
+//     alert('Вы киноман!');
+// } else {
+//     alert("Произошла ошибка");
+// }
+
+// let cat;
+
+//     do {
+//         cat = prompt('Один из последних просмотренных фильмов?');
+//     } while (cat == '' || cat == null || cat.length < 50);
+
+// let dog;
+
+//     do {
+//         dog = +prompt('На сколько оцените его?');
+//     } while (dog == '' || dog == null);
 
 
 
