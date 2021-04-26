@@ -2,9 +2,18 @@
 
 let numberOfFilms;
 
-do {
+
+function start() {
     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-} while (numberOfFilms == '' || numberOfFilms == null);
+
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+}
+
+start();
+
+
 
 let personalMovieDB = {
     count: numberOfFilms,
@@ -14,7 +23,7 @@ let personalMovieDB = {
     privat: false
 };
 
-
+function detectPersonalLevel() {
 if (personalMovieDB.count < 10) {
     alert("Просмотрено довольно мало фильмов");
 } else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
@@ -23,10 +32,12 @@ if (personalMovieDB.count < 10) {
     alert('Вы киноман!');
 } else {
     alert("Произошла ошибка");
+    }
 }
+detectPersonalLevel();
 
 
-
+function rememberMyFilms(){
 for (i=0; i < 2; i++) {
     let cat;
 
@@ -40,7 +51,9 @@ for (i=0; i < 2; i++) {
         dog = +prompt('На сколько оцените его?');
     } while (dog == '' || dog == null);
     personalMovieDB.movies[cat] = dog;
+    }
 }
+rememberMyFilms();
 
 console.log(personalMovieDB);
 
